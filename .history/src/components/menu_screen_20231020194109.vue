@@ -5,7 +5,9 @@
         <button class="baton" id="poka-login" v-bind:class="open_login_button" @click="showLoginScreen">
           LOGIN
         </button>
-        <button id="change_theme_btn" v-bind:class="change_theme_btn" @click="changeTheme">
+      </div>
+      <div>
+        <button id="change_theme_btn" v-bind:class="change_theme_button" @click="changeTheme">
           Zmiana motywu
         </button>
         <div id="gear_icon_box">
@@ -28,7 +30,7 @@
       return {
         menu_box_show: "show",
         open_option_button: "unanimated",
-        change_theme_btn:"bright",
+        change_theme_button:"bright",// zmienna która definiuje czy komponent jest widoczyny
       };
     },
     methods: {
@@ -37,10 +39,10 @@
 
       },
       changeTheme() {
-        if (this.change_theme_btn === 'dark') {
-          this.change_theme_btn = 'bright';
+        if (this.change_theme_button === 'dark') {
+          this.change_theme_button = 'bright';
         } else {
-          this.change_theme_btn = 'dark';
+          this.change_theme_button = 'dark';
         }
           this.$emit('change-theme');
       },
@@ -102,11 +104,11 @@
    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
    gap: 0px;
    grid-template-areas:
-        ". Exit_menu_button"
-        " poka-login ."
-        "..."
-        "gear_icon_box"
-        " change_theme_btn .";
+     ". Exit_menu_button"
+     " poka-login ."
+     ". . .";
+
+
   }
   .baton {
     background-color: rgb(18, 165, 13);
@@ -143,21 +145,22 @@
     background-color: rgb(37, 37, 37);
   }
   .dark{
-    color: rgb(37, 37, 37) !important;
+    background-color: #333;
+    color: #fff;
+
   }
   .bright{
-
-    color: white;
+    color: #333;
   }
   #gear_icon_box img {
     max-width: 100px;
     cursor: pointer;
   }
   .unanimated{
-  animation: back_spin 0.5s;
+  animation: back_spin 3s ease;
 }
   .animated{
-    animation: spin 5s linear infinite;
+    animation: spin 1s linear infinite;
   }
   @keyframes spin {
   from {
@@ -169,29 +172,18 @@
 }
 @keyframes back_spin {
   from {
-    transform: rotate(360deg);
+    transform: rotate(360deg); /* Use the actual position you want to rotate back to */
   }
   to {
     transform: rotate(0deg);
   }
  }
- #gear_icon_box {
+  #gear_icon_box{
     height: 30px;
     width: 30px;
-    border: none;
-    background-color: transparent;
-    display: grid;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    grid-area: gear_icon_box;
-}
+  }
   #change_theme_btn{
-    border: none;
-    background-color: transparent;
-    display: grid;
-
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    grid-area: change_theme_btn;
-   }
+    justify-content: left;
+  text-align: left;
+  }
   </style>

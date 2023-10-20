@@ -2,16 +2,11 @@
 <body>
   <div id="box">
     <div class="x-btn"><button class="xd-btn" v-bind:class="open_menu_button " @click="showMenuScreen">Pokaż menu</button>
-      <menu_screen v-if="isMenuScreenVisible" @hide-menu-screen="hideMenuScreen" @show-login-screen="showLoginScreen" @change-theme="changeTheme" @option-open="optionOpener">
-    </menu_screen>
-
+    <menu_screen v-if="isMenuScreenVisible" @hide-menu-screen="hideMenuScreen" @show-login-screen="showLoginScreen"></menu_screen></div>
+    
     <div> <!--menu_scree i login_screen odpowiedzialne są za pokazywanie się tych komponentów-->
-      <login_screen v-if="isLoginScreenVisible" @hide-login-screen="hideLoginScreen">
-      </login_screen>
+      <login_screen v-if="isLoginScreenVisible" @hide-login-screen="hideLoginScreen"></login_screen>
     </div>
-    <option_screen v-if="isOptionScreenVisible" @hide-option-screen="HideOptionScreen">
-      </option_screen>
-  </div>
   </div>
 </body>
 </template>
@@ -19,12 +14,10 @@
 <script>
 import menu_screen from './components/menu_screen.vue';
 import login_screen from './components/login_screen.vue';
-import option_screen from './components/option_screen.vue';
 export default {
   components: {
     menu_screen,
     login_screen,
-    option_screen,
   },
   data() {
     return {
@@ -32,27 +25,9 @@ export default {
       open_login_button: "show",
       isLoginScreenVisible: false,
       isMenuScreenVisible: false,
-      changecolor:0,
-      isOptionScreenVisible: false,
     };
   },
   methods: {
-    optionOpener(){
-      this.isOptionScreenVisible = true;
-    },
-    HideOptionScreen(){
-      setTimeout(() => {
-      this.isOptionScreenVisible = false;
-      }, 1000);
-    },
-    changeTheme() {
-        this.changecolor += 1;
-      if (this.changecolor % 2 === 0) {
-        document.body.style.backgroundColor = 'blue';
-      } else {
-        document.body.style.backgroundColor = 'red';
-      }
-    },
     showMenuScreen() { //funkcja pokazująca menu
       this.isMenuScreenVisible = true;
       this.open_menu_button = "hidden";

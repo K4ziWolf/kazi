@@ -8,17 +8,19 @@
       </div>
       <div id="Exit_button">
         <button id="login_password_space" @click="hideLoginScreen"> x
+          <login_screen v-if="  isLoginScreenVisible">
+    </login_screen>
       </button>
         <slot></slot>  <!--jak coś dawid to pole jest to
           przeniesienie pól <login_screen> z App.vue aby to jako tako działało-->
         </div>
         <button id="login_button_space" @click="login">Zaloguj</button>
       </div>
-
-
+  
+  
   </template>
-
-
+  
+  
   <script>
   export default {
    data() {
@@ -45,8 +47,8 @@
          console.log("Błąd logowania: chujowe hasło");
        }
      },
-
-
+  
+  
    },
   };
   </script>
@@ -78,7 +80,7 @@
      transform: translate3d(0, -40%, 0);
    }
   }
-
+  
   #login_holder {
    display: grid;
    position: absolute;

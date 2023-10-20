@@ -8,6 +8,7 @@
         <button id="change_theme_btn" v-bind:class="change_theme_btn" @click="changeTheme">
           Zmiana motywu
         </button>
+      </div>
         <div id="gear_icon_box">
         <img
           v-bind:class="open_option_button"
@@ -17,7 +18,6 @@
           @mouseleave="openOptionButtonLeave"
           @click="open_options"
         />
-      </div>
     </div>
     </div>
   </template>
