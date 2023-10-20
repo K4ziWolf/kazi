@@ -117,8 +117,10 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
+  gap: 20px;
   grid-template-areas: "Exit_menu_button" "poka-login" "change_theme_btn" "gear_icon_box";
   justify-content: center;
+  align-items: center;
 }
 
 .baton {

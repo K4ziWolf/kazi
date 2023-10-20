@@ -114,9 +114,10 @@
 #menu_holder {
   background-color: rgb(37, 37, 37) !important;
   position: absolute;
-  height: 100vh;
+  height: 100vh; /* Ustawienie na 100% wysokości strony */
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* Pasek będzie miał tylko jedną kolumnę */
+  gap: 20px;
   grid-template-areas: "Exit_menu_button" "poka-login" "change_theme_btn" "gear_icon_box";
   justify-content: center;
 }

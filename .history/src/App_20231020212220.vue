@@ -1,14 +1,11 @@
 <template>
 <body>
   <section>
-  <div id="container" class="col-md-12">
-    <div class="d-flex flex-column text-white" style="background-color: rgb(61, 61, 61) ">
-    <div class="x-btn">
-      <button class="btn btn-outline-secondary" v-bind:class="open_menu_button " @click="showMenuScreen" >
-        Pokaż menu
-      </button>
+  <div id="container">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
+    <div class="x-btn"><button class="xd-btn" v-bind:class="open_menu_button " @click="showMenuScreen">Pokaż menu</button>
       <menu_screen v-if="isMenuScreenVisible" @hide-menu-screen="hideMenuScreen" @show-login-screen="showLoginScreen" @change-theme="changeTheme" @option-open="optionOpener">
-      </menu_screen>
+    </menu_screen>
 
     <div> <!--menu_scree i login_screen odpowiedzialne są za pokazywanie się tych komponentów-->
       <login_screen v-if="isLoginScreenVisible" @hide-login-screen="hideLoginScreen">
@@ -140,7 +137,8 @@ body { /*testy moje do zmiany */
   border-bottom-right-radius: 25px;
   color: white;
   font-weight: bolder;
-
+  position: absolute;
+  justify-content: left;
 }
 html {
   background-color: #496886;
