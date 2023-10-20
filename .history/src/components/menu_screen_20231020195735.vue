@@ -8,6 +8,7 @@
         <button id="change_theme_btn" v-bind:class="change_theme_btn" @click="changeTheme">
           Zmiana motywu
         </button>
+      </div>
         <div id="gear_icon_box">
         <img
           v-bind:class="open_option_button"
@@ -17,7 +18,6 @@
           @mouseleave="openOptionButtonLeave"
           @click="open_options"
         />
-      </div>
     </div>
     </div>
   </template>
@@ -175,16 +175,17 @@
     transform: rotate(0deg);
   }
  }
- #gear_icon_box {
+  #gear_icon_box{
     height: 30px;
     width: 30px;
     border: none;
     background-color: transparent;
     display: grid;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     grid-area: gear_icon_box;
-}
+  }
   #change_theme_btn{
     border: none;
     background-color: transparent;

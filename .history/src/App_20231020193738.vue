@@ -12,7 +12,6 @@
     <option_screen v-if="isOptionScreenVisible" @hide-option-screen="HideOptionScreen">
       </option_screen>
   </div>
-  </div>
 </body>
 </template>
 

@@ -5,6 +5,8 @@
         <button class="baton" id="poka-login" v-bind:class="open_login_button" @click="showLoginScreen">
           LOGIN
         </button>
+      </div>
+      <div>
         <button id="change_theme_btn" v-bind:class="change_theme_btn" @click="changeTheme">
           Zmiana motywu
         </button>
@@ -102,11 +104,11 @@
    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
    gap: 0px;
    grid-template-areas:
-        ". Exit_menu_button"
-        " poka-login ."
-        "..."
-        "gear_icon_box"
-        " change_theme_btn .";
+     ". Exit_menu_button"
+     " poka-login ."
+     ". . .";
+
+
   }
   .baton {
     background-color: rgb(18, 165, 13);
@@ -154,10 +156,10 @@
     cursor: pointer;
   }
   .unanimated{
-  animation: back_spin 0.5s;
+  animation: back_spin 6s ease;
 }
   .animated{
-    animation: spin 5s linear infinite;
+    animation: spin 0.5s linear infinite;
   }
   @keyframes spin {
   from {
@@ -169,22 +171,16 @@
 }
 @keyframes back_spin {
   from {
-    transform: rotate(360deg);
+    transform: rotate(360deg); /* Use the actual position you want to rotate back to */
   }
   to {
     transform: rotate(0deg);
   }
  }
- #gear_icon_box {
+  #gear_icon_box{
     height: 30px;
     width: 30px;
-    border: none;
-    background-color: transparent;
-    display: grid;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    grid-area: gear_icon_box;
-}
+  }
   #change_theme_btn{
     border: none;
     background-color: transparent;
@@ -192,6 +188,6 @@
 
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    grid-area: change_theme_btn;
+
    }
   </style>
