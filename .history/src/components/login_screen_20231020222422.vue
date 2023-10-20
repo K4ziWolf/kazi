@@ -1,6 +1,6 @@
 <template>
-  <section id="my-section" style="background-color: #496886;">
-    <div :class="login_box_show" style="padding: 20px; min-height: 20%;">
+  <section id="my-section" style="background-color: #496886; ;">
+    <div :class="login_box_show" style="padding: 20px;">
       <div id="login_holder" class="btn btn-outline-secondary col-md-8" style="width: 60%; margin: 0 auto; max-width: 2000px; min-width: 300px; background-color: rgb(154, 141, 141); border-radius: 20px;;" >
         <div class="form-group">
             <label for="username">

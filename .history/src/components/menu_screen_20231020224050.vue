@@ -111,15 +111,7 @@
   }
 }
 
-#menu_holder {
-  background-color: rgb(37, 37, 37) !important;
-  position: absolute;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: "Exit_menu_button" "poka-login" "change_theme_btn" "gear_icon_box";
-  justify-content: center;
-}
+
 
 .baton {
   background-color: rgb(18, 165, 13);
@@ -185,15 +177,14 @@
   }
  }
  #gear_icon_box {
-  height: 30px;
-  width: 30px;
-  border: none;
-  background-color: transparent;
-  display: grid;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
-  grid-area: gear_icon_box;
-  justify-self: center;
+    height: 30px;
+    width: 30px;
+    border: none;
+    background-color: transparent;
+    display: grid;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    grid-area: gear_icon_box;
 }
   #change_theme_btn{
     border: none;

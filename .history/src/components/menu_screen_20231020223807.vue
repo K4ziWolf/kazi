@@ -69,20 +69,8 @@
 .show {
   animation: show_animation 1s ease-in-out;
 }
-  .baton {
-  background-color: rgb(18, 165, 13);
-  display: inline-grid;
-  text-decoration: none;
-  width: 100%;
-  height: 50px;
-  border-radius: 25px;
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border: none;
-  color: white;
-  font-weight: bold;
-  margin-bottom: 10px;
-  line-height: 50px; /* Zmieniona wysokość tekstu */
+button{
+  width: 10px;
 }
 @keyframes show_animation {
   from {
@@ -114,11 +102,11 @@
 #menu_holder {
   background-color: rgb(37, 37, 37) !important;
   position: absolute;
-  height: 100vh;
+  height: 100vh; /* Ustawienie na 100% wysokości strony */
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* Pasek będzie miał tylko jedną kolumnę */
+  gap: 0px;
   grid-template-areas: "Exit_menu_button" "poka-login" "change_theme_btn" "gear_icon_box";
-  justify-content: center;
 }
 
 .baton {
@@ -185,15 +173,14 @@
   }
  }
  #gear_icon_box {
-  height: 30px;
-  width: 30px;
-  border: none;
-  background-color: transparent;
-  display: grid;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
-  grid-area: gear_icon_box;
-  justify-self: center;
+    height: 30px;
+    width: 30px;
+    border: none;
+    background-color: transparent;
+    display: grid;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    grid-area: gear_icon_box;
 }
   #change_theme_btn{
     border: none;
@@ -204,5 +191,4 @@
     font-weight: bold;
     grid-area: change_theme_btn;
    }
-
   </style>

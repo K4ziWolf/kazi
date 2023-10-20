@@ -1,32 +1,26 @@
 <template>
-  <section id="my-section" style="background-color: #496886;">
-    <div :class="login_box_show" style="padding: 20px; min-height: 20%;">
-      <div id="login_holder" class="btn btn-outline-secondary col-md-8" style="width: 60%; margin: 0 auto; max-width: 2000px; min-width: 300px; background-color: rgb(154, 141, 141); border-radius: 20px;;" >
+  <section id="my-section" >
+  <div id="login_holder" class="btn btn-outline-secondary col-md-8" >
+      <div class="form-group">
+          <label for="username">Nazwa użytkownika</label>
+          <input id="username" class="form-control" type="text" v-model="username" required>
+
+      </div>
+      <div class="col-md-6">
         <div class="form-group">
-            <label for="username">
-                Nazwa użytkownika
-            </label>
-            <input id="username" class="form-control" type="text" v-model="username" required style="width: 60%; margin: 0 auto; max-width: 500px; min-width: 200px;" >
-        </div>
-        <div>
-          <div class="form-group">
-            <label for="password">
-              Hasło
-            </label>
-            <input id="password" class="form-control" type="password" v-model="password" required style="width: 60%; margin: 0 auto; max-width: 500px; min-width: 200px;">
-          </div>
-        </div>
-        <div class="col-12" style="padding: 15px">
-          <button @click="hideLoginScreen" class="btn btn-danger" >
-            x
-          </button>
-          <button @click="login" class="btn btn-primary" style="margin-left: 20px;">
-            Zaloguj
-          </button>
+          <label for="password">
+            Hasło
+          </label>
+          <input id="password" class="form-control" type="password" v-model="password" required>
         </div>
       </div>
     </div>
-  </section>
+      <div class="col-12 ">
+        <button @click="hideLoginScreen" class="btn btn-danger">x</button>
+        <slot></slot>
+        <button @click="login" class="btn btn-primary">Zaloguj</button>
+      </div>
+    </section>
 </template>
 
 <script>
@@ -100,6 +94,9 @@ export default {
   height: 100%;
   background-color: #496886;
   position: absolute;
+}
+.chuj{
+  background-color: #496886;
 }
 
 </style>

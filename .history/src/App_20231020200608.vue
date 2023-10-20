@@ -1,14 +1,45 @@
 <template>
 <body>
-  <section>
-  <div id="container" class="col-md-12">
-    <div class="d-flex flex-column text-white" style="background-color: rgb(61, 61, 61) ">
-    <div class="x-btn">
-      <button class="btn btn-outline-secondary" v-bind:class="open_menu_button " @click="showMenuScreen" >
-        Pokaż menu
-      </button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+  <div id="box">
+    <div class="x-btn"><button class="xd-btn" v-bind:class="open_menu_button " @click="showMenuScreen">Pokaż menu</button>
       <menu_screen v-if="isMenuScreenVisible" @hide-menu-screen="hideMenuScreen" @show-login-screen="showLoginScreen" @change-theme="changeTheme" @option-open="optionOpener">
-      </menu_screen>
+    </menu_screen>
 
     <div> <!--menu_scree i login_screen odpowiedzialne są za pokazywanie się tych komponentów-->
       <login_screen v-if="isLoginScreenVisible" @hide-login-screen="hideLoginScreen">
@@ -18,8 +49,6 @@
       </option_screen>
   </div>
   </div>
-  </div>
-  </section>
 </body>
 </template>
 
@@ -98,6 +127,7 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
 .show {
   opacity: 1;
   animation: show_button 0.4s;
@@ -129,6 +159,8 @@ body { /*testy moje do zmiany */
 }
 .x-btn {
   background-color: rgb(61, 61, 61);
+  justify-content: left;
+  text-align: left;
 
 }
 .xd-btn {
@@ -140,7 +172,8 @@ body { /*testy moje do zmiany */
   border-bottom-right-radius: 25px;
   color: white;
   font-weight: bolder;
-
+  position: absolute;
+  justify-content: left;
 }
 html {
   background-color: #496886;

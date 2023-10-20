@@ -119,6 +119,7 @@
   grid-template-columns: 1fr;
   grid-template-areas: "Exit_menu_button" "poka-login" "change_theme_btn" "gear_icon_box";
   justify-content: center;
+  align-items: center;
 }
 
 .baton {

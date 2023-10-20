@@ -1,9 +1,7 @@
 <template>
-     <div class="holder-ten1 col-sm-2" id="menu_holder" :class="menu_box_show">
+  <div class="holder-ten1 col-sm-" id="menu_holder" :class="menu_box_show">
     <div class="pole-exit-btn" id="Exit_menu_button">
-      <button class="exit-baton" id="menu_exit_button" @click="hideMenuScreen">
-        x
-      </button>
+      <button class="exit-baton" id="menu_exit_button" @click="hideMenuScreen">x</button>
       <button class="baton" id="poka-login" v-bind:class="open_login_button" @click="showLoginScreen">
         LOGIN
       </button>
@@ -66,85 +64,77 @@
   };
   </script>
   <style scoped>  /* scoped dotyczy tylko tego dokumentu */
-.show {
-  animation: show_animation 1s ease-in-out;
-}
+  .show {
+    animation: show_animation 1s ease-in-out;
+  }
+  @keyframes show_animation {
+    from {
+      opacity: 0;
+      transform: translate3d(-40%, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .hide {
+    opacity: 0;
+    animation: hide_animation 1s ease-in-out;
+  }
+  @keyframes hide_animation {
+    from {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      opacity: 0;
+      transform: translate3d(-40%, 0, 0);
+    }
+  }
+
+  #menu_holder { /*testy moje do zmiany */
+    background-color: rgb(37, 37, 37) !important;
+
+    display: grid;
+   position: absolute;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+   gap: 0px;
+   grid-template-areas:
+        ". Exit_menu_button"
+        " poka-login ."
+        "..."
+        "gear_icon_box"
+        " change_theme_btn .";
+  }
   .baton {
-  background-color: rgb(18, 165, 13);
-  display: inline-grid;
-  text-decoration: none;
-  width: 100%;
-  height: 50px;
-  border-radius: 25px;
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border: none;
-  color: white;
-  font-weight: bold;
-  margin-bottom: 10px;
-  line-height: 50px; /* Zmieniona wysokość tekstu */
-}
-@keyframes show_animation {
-  from {
-    opacity: 0;
-    transform: translate3d(-40%, 0, 0);
+    background-color: rgb(18, 165, 13);
+    display: inline-grid;
+    text-decoration: none;
+    width: 130px;
+    height: 50px;
+    border-radius: 25px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    justify-content: center;
+    align-self: center;
+    color: white;
+    margin-left: 14%;
+    line-height: 50px;
+    font-weight: bold;
   }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+  .exit-baton {
+    border: none;
+    background-color: transparent;
+    display: grid;
+
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: white;
+
+
   }
-}
-
-.hide {
-  opacity: 0;
-  animation: hide_animation 1s ease-in-out;
-}
-
-@keyframes hide_animation {
-  from {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    opacity: 0;
-    transform: translate3d(-40%, 0, 0);
-  }
-}
-
-#menu_holder {
-  background-color: rgb(37, 37, 37) !important;
-  position: absolute;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: "Exit_menu_button" "poka-login" "change_theme_btn" "gear_icon_box";
-  justify-content: center;
-}
-
-.baton {
-  background-color: rgb(18, 165, 13);
-  display: inline-grid;
-  text-decoration: none;
-  width: 100%; /* Rozciągnij przycisk na 100% szerokości kontenera */
-  height: 50px;
-  border-radius: 25px;
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border: none;
-  color: white;
-  font-weight: bold;
-  margin-bottom: 10px; /* Dodaj odstęp między przyciskami */
-}
-
-.exit-baton {
-  border: none;
-  background-color: transparent;
-  display: grid;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
-  color: white;
-}
-
   holder-ten1 {
     background-color: rgb(37, 37, 37);
   }
@@ -185,15 +175,14 @@
   }
  }
  #gear_icon_box {
-  height: 30px;
-  width: 30px;
-  border: none;
-  background-color: transparent;
-  display: grid;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
-  grid-area: gear_icon_box;
-  justify-self: center;
+    height: 30px;
+    width: 30px;
+    border: none;
+    background-color: transparent;
+    display: grid;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    grid-area: gear_icon_box;
 }
   #change_theme_btn{
     border: none;
@@ -204,5 +193,4 @@
     font-weight: bold;
     grid-area: change_theme_btn;
    }
-
   </style>
