@@ -8,8 +8,9 @@
         LOGIN
       </button>
       <button id="change_theme_btn" v-bind:class="change_theme_btn" @click="changeTheme">
-        Zmiana motywu
+        THEME CHANGE
       </button>
+      
       <div id="gear_icon_box">
         <img
           v-bind:class="open_option_button"
@@ -159,7 +160,7 @@
     color: white;
   }
   #gear_icon_box img {
-    max-width: 100px;
+    max-width: 64px;
     cursor: pointer;
   }
   .unanimated{
@@ -194,15 +195,41 @@
   font-weight: bold;
   grid-area: gear_icon_box;
   justify-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  margin-top: 15px;
 }
   #change_theme_btn{
     border: none;
-    background-color: transparent;
+    border-radius: 25px;
+    background-color: rgb(20, 20, 20);
     display: grid;
 
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     grid-area: change_theme_btn;
+    font-size: 13px;
+    transition: 2s;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-grid;
+    text-decoration: none;
+    width: 100%;
+    height: 50px;
+    line-height: 50px
+  
+
+   }
+   
+   .switch-theme {
+    background-color: rgb(163, 163, 163);
+    justify-content: center;
+    align-self: center;
+    display: block;
    }
 
   </style>
