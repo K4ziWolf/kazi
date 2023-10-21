@@ -1,31 +1,13 @@
 <template>
   <section id="my-section" style="background-color: #496886;">
-    <div :class="login_box_show" style="padding: 20px; min-height: 20%;">
-      <div id="login_holder" class="btn btn-outline-secondary col-md-8 login-holder" style="width: 60%; margin: 0 auto; max-width: 2000px; min-width: 300px; background-color: rgb(59, 59, 59); border-radius: 20px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;" >
-        <div class="form-group">
-            <label for="username">
-                Nazwa użytkownika
-            </label>
-            <input id="username" class="form-control" type="text" v-model="username" required style="width: 60%; margin: 0 auto; max-width: 500px; min-width: 200px;" >
-        </div>
-        <div>
-          <div class="form-group">
-            <label for="password">
-              Hasło
-            </label>
-            <input id="password" class="form-control" type="password" v-model="password" required style="width: 60%; margin: 0 auto; max-width: 500px; min-width: 200px;">
-          </div>
-        </div>
-        <div class="col-12" style="padding: 15px">
-          <button @click="hideLoginScreen" class="btn btn-danger btn-close-login" >
-            x
-          </button>
-          <button @click="login" class="btn btn-primary btn-login-here" style="margin-left: 20px;">
-            Zaloguj
-          </button>
-        </div>
-      </div>
+    <div class="option-title" id="option_holder" v-bind:class="option_box_show" >
+    Opcje
+    <div id="Exit_button_box" class="btn-close-login-box">
+      <button id="exit_button" class="btn btn-danger btn-close-login" @click="hideOptionScreen">
+        x
+      </button>
     </div>
+  </div>
   </section>
 </template>
 
@@ -33,10 +15,7 @@
 export default {
   data() {
     return {
-      login_box_show: "show",
-      username: "",
-      password: "",
-      log_pass: false,
+      option_box_show: "show",
     };
   },
   methods: {

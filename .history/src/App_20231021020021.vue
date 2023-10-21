@@ -46,12 +46,14 @@ export default {
   methods: {
     optionOpener(){
       this.isOptionScreenVisible = true;
-      this.isMenuScreenVisible = false;
+      setTimeout(() => {
+      this.isOptionScreenVisible = false;
+      }, 1000);
     },
     HideOptionScreen(){
-      this.isOptionScreenVisible = false;
+      this.isOptionScreenVisible = true;
       setTimeout(() => {
-      this.open_menu_button = "show";
+      this.isOptionScreenVisible = false;
       }, 1000);
     },
     changeTheme() {
@@ -102,7 +104,7 @@ export default {
 }
 .show {
   opacity: 1;
-  animation: show_button 0.3s;
+  animation: show_button 0.4s;
 }
 @keyframes show_button {
   from {
@@ -113,7 +115,7 @@ export default {
   }
 }
 .hidden {
-  animation: hide_button 0.3s;
+  animation: hide_button 0.4s;
   opacity: 0;
 }
 @keyframes hide_button {

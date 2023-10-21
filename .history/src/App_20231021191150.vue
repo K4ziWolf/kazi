@@ -45,13 +45,14 @@ export default {
   },
   methods: {
     optionOpener(){
+
       this.isOptionScreenVisible = true;
-      this.isMenuScreenVisible = false;
     },
     HideOptionScreen(){
       this.isOptionScreenVisible = false;
       setTimeout(() => {
       this.open_menu_button = "show";
+      this.isMenuScreenVisible = false;
       }, 1000);
     },
     changeTheme() {
@@ -62,7 +63,7 @@ export default {
         document.body.style.backgroundColor = 'red';
       }
     },
-    showMenuScreen() { //funkcja pokazująca menu
+    showMenuScreen() {
       this.isMenuScreenVisible = true;
       this.open_menu_button = "hidden";
       this.open_login_button = "show";
@@ -102,7 +103,7 @@ export default {
 }
 .show {
   opacity: 1;
-  animation: show_button 0.3s;
+  animation: show_button 0.4s;
 }
 @keyframes show_button {
   from {
@@ -113,7 +114,7 @@ export default {
   }
 }
 .hidden {
-  animation: hide_button 0.3s;
+  animation: hide_button 0.4s;
   opacity: 0;
 }
 @keyframes hide_button {
