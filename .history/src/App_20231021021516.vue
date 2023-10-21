@@ -46,13 +46,14 @@ export default {
   methods: {
     optionOpener(){
       this.isOptionScreenVisible = true;
-      this.isMenuScreenVisible = false;
     },
     HideOptionScreen(){
-      this.isOptionScreenVisible = false;
+      this.isMenuScreenVisible = false;
       setTimeout(() => {
-      this.open_menu_button = "show";
-      }, 1000);
+        this.open_login_button = "show";
+        this.open_menu_button ='show';
+        this.isOptionScreenVisible = false;
+      }, 1500);
     },
     changeTheme() {
         this.changecolor += 1;
@@ -102,7 +103,7 @@ export default {
 }
 .show {
   opacity: 1;
-  animation: show_button 0.3s;
+  animation: show_button 0.4s;
 }
 @keyframes show_button {
   from {
@@ -113,7 +114,7 @@ export default {
   }
 }
 .hidden {
-  animation: hide_button 0.3s;
+  animation: hide_button 0.4s;
   opacity: 0;
 }
 @keyframes hide_button {

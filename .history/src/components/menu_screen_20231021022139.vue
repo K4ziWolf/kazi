@@ -36,11 +36,9 @@
     },
     methods: {
       open_options(){
-
-        this.menu_box_show = "hide";
-        setTimeout(() => {
-          this.$emit('option-open');
-        }, 1000);
+        this.$emit('option-open');
+        this.menu_box_show='hide',
+();
       },
       changeTheme() {
         if (this.change_theme_btn === 'dark') {

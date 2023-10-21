@@ -58,7 +58,7 @@
         this.menu_box_show = "hide";
         setTimeout(() => {
           this.$emit('show-Login-Screen');
-        }, 200); //opóźnienie dla dobra animacji chyba tak mi się wydaje dawno temu to pisałem
+        }, 2000); //opóźnienie dla dobra animacji chyba tak mi się wydaje dawno temu to pisałem
       },
       openOptionButtonEnter() {
         this.open_option_button = "animated";

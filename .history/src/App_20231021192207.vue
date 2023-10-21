@@ -102,7 +102,7 @@ export default {
 }
 .show {
   opacity: 1;
-  animation: show_button 0.3s;
+  animation: show_button 0.2s;
 }
 @keyframes show_button {
   from {
@@ -113,7 +113,7 @@ export default {
   }
 }
 .hidden {
-  animation: hide_button 0.3s;
+  animation: hide_button 0.4s;
   opacity: 0;
 }
 @keyframes hide_button {
